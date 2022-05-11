@@ -85,7 +85,7 @@ public class SaveSystem : MonoBehaviour
         PlayerPrefs.DeleteKey("PosZ");
     }
 
-    public void ProverkaNaSave()
+    public void CheckingSave()
     {
         if (PlayerPrefs.HasKey("PosX") || PlayerPrefs.HasKey("PosY") || PlayerPrefs.HasKey("PosZ"))
         {
