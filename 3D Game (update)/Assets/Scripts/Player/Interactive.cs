@@ -14,6 +14,8 @@ namespace Player
         [SerializeField] private float maxDistanceRay;
         private bool isNote = false;
         private Keys keys;
+        [SerializeField]
+        private SaveSystem ss;
 
         [SerializeField] 
         private InventoryPanel _inventoryPanel;
@@ -79,7 +81,11 @@ namespace Player
                     var itemData = hit.transform.GetComponent<ItamLay>().ItemData;
                 
                     if (_inventoryPanel.TryAddItem(itemData))
+                    {
                         Destroy(hit.transform.gameObject);
+                        ss.isDesKey = true;
+                    }
+                        
                 
                     //print(itemData.Name);
                 }

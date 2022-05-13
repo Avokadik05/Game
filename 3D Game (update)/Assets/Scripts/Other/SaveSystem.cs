@@ -10,6 +10,9 @@ public class SaveSystem : MonoBehaviour
     private Transform player;
     public GameObject newGamePanel;
     public Button nextButton;
+    public bool isDesKey;
+    [SerializeField]
+    private GameObject key;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +44,7 @@ public class SaveSystem : MonoBehaviour
         PlayerPrefs.SetFloat("PosX", X);
         PlayerPrefs.SetFloat("PosY", Y);
         PlayerPrefs.SetFloat("PosZ", Z);
+        PlayerPrefs.SetInt("DesKey", isDesKey ? 1 : 0);
         PlayerPrefs.Save();
     }
 
@@ -73,6 +77,11 @@ public class SaveSystem : MonoBehaviour
             Z = 0;
         }
         player.transform.position = new Vector3(X, Y, Z);
+
+        if (PlayerPrefs.HasKey("DesKey"))
+        {
+            isDesKey = PlayerPrefs.GetInt("DesKey") == 1;
+        }
     }
 
     public void Delete()
@@ -80,9 +89,11 @@ public class SaveSystem : MonoBehaviour
         X = 0;
         Y = 0;
         Z = 0;
+        isDesKey = false;
         PlayerPrefs.DeleteKey("PosX");
         PlayerPrefs.DeleteKey("PosY");
         PlayerPrefs.DeleteKey("PosZ");
+        PlayerPrefs.DeleteKey("DesKey");
     }
 
     public void CheckingSave()

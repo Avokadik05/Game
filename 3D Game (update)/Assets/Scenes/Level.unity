@@ -1164,7 +1164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -17}
   m_SizeDelta: {x: 640.7996, y: 911.5771}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504103470
@@ -3457,6 +3457,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ddb0d9b69325404cbfbada4a37a65ff, type: 3}
+--- !u!1 &1177978181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 393671769954264907, guid: a01bdfa612687bf429c971b465ed7219, type: 3}
+  m_PrefabInstance: {fileID: 1826097367}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1177978187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177978181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71ede4609b33924ea77d9a4ffb2f482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1227174289
 GameObject:
   m_ObjectHideFlags: 0
@@ -7711,6 +7728,7 @@ MonoBehaviour:
   cam: {fileID: 963194227}
   interactiveCross: {fileID: 583814177}
   maxDistanceRay: 1.5
+  ss: {fileID: 8040610985992053279}
   _inventoryPanel: {fileID: 1317220591}
   _keyData: {fileID: 11400000, guid: 2b5d00551b633af4fa20e0562c0fc665, type: 2}
 --- !u!1001 &5409913921240902694
@@ -8912,6 +8930,10 @@ PrefabInstance:
       propertyPath: playerNormalCollider
       value: 
       objectReference: {fileID: 400713071}
+    - target: {fileID: 8040610985992053279, guid: 2afcebf4c109afa4387a0ef880e906f2, type: 3}
+      propertyPath: key
+      value: 
+      objectReference: {fileID: 393671769954264907, guid: a01bdfa612687bf429c971b465ed7219, type: 3}
     - target: {fileID: 8040610985992053279, guid: 2afcebf4c109afa4387a0ef880e906f2, type: 3}
       propertyPath: newGamePanel
       value: 
