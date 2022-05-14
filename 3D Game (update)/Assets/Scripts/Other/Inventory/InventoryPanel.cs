@@ -27,7 +27,7 @@ namespace Other.Inventory
 
         private void Start()
         {
-            //Reset(); //очищает инвентарь при запуске
+            Reset(); //очищает инвентарь при запуске
             Refresh?.Invoke();
             ChouseCell(0);
         }
