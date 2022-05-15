@@ -6,6 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class Settings : MonoBehaviour
 {
+    [Header("Настройки UI")]
+    public Text gameNameText;
+    [SerializeField]
+    private string gameName;
+    public Text gameVersionText;
+    [SerializeField]
+    private string gameVersion;
+    [Header("Ссылки на объекты")]
     public Dropdown resolutionDropdown;
     public Dropdown qualityDropdown;
 
@@ -13,6 +21,9 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
+        GameUISetting();
+
+
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
         resolutions = Screen.resolutions;
@@ -75,6 +86,12 @@ public class Settings : MonoBehaviour
             Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
         else
             Screen.fullScreen = true;
+    }
+
+    public void GameUISetting()
+    {
+        gameVersionText.text = gameVersion;
+        gameNameText.text = gameName;
     }
 
 

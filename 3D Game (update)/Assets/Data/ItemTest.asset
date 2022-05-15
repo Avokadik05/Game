@@ -15,3 +15,4 @@ MonoBehaviour:
   Name: testI item
   Icon: {fileID: 21300000, guid: 954d757e168ec074a9b186c3a7d046b5, type: 3}
   Prefab: {fileID: 5409913921545651763, guid: d10c6fee99c41c744ac1ac310ff770d1, type: 3}
+  destroy: 1
