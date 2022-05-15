@@ -1741,11 +1741,11 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: ea0c294de508c7c4b8295ac927ac41c2, type: 2}
   m_TreeDistance: 1500
-  m_TreeBillboardDistance: 150
+  m_TreeBillboardDistance: 100
   m_TreeCrossFadeLength: 15
   m_TreeMaximumFullLODCount: 1000
   m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
+  m_DetailObjectDensity: 0.5
   m_HeightmapPixelError: 30
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
