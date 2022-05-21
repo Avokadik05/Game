@@ -60,8 +60,6 @@ namespace Player
             if (hit.transform != null && hit.transform.GetComponent<Door>())
             {
                 Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
-                interactiveCross.SetActive(true);
-
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (_inventoryPanel.CurrentItem && _inventoryPanel.CurrentItem == _keyData)
@@ -90,76 +88,53 @@ namespace Player
                     //print(itemData.Name);
                 }
             }
-            else
-            {
-                interactiveCross.SetActive(false);
-            }
-
 
             //OpenedDoor
             if (hit.transform != null && hit.transform.GetComponent<OpenedDoor>())
             {
                 Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
-                interactiveCross.SetActive(true);
-
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.transform.GetComponent<OpenedDoor>().Open();
                 }
-
-                //Note
-                if (hit.transform != null && hit.transform.GetComponent<Notes>())
+            }
+            
+            //Note
+            if (hit.transform != null && hit.transform.GetComponent<Notes>())
+            {
+                Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
-                    interactiveCross.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        isNote = !isNote;
+                    isNote = !isNote;
 
-                        if (isNote)
-                        {
-                            hit.transform.GetComponent<Notes>().OnNote();
-                        }
-                        else
-                        {
-                            hit.transform.GetComponent<Notes>().ExitNote();
-                        }
+                    if (isNote)
+                    {
+                        hit.transform.GetComponent<Notes>().OnNote();
+                    }
+                    else
+                    {
+                        hit.transform.GetComponent<Notes>().ExitNote();
                     }
                 }
-                else
-                {
-                    interactiveCross.SetActive(false);
-                }
+            }
 
-                //Key
-                if (hit.transform != null && hit.transform.GetComponent<Keys>())
+            //Polki
+            if (hit.transform != null && hit.transform.GetComponent<Polki>())
+            {
+                Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
-                    interactiveCross.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        hit.transform.GetComponent<Keys>().Key();
-                    }
+                    hit.transform.GetComponent<Polki>().Open();
                 }
-                else
-                {
-                    interactiveCross.SetActive(false);
-                }
+            }
 
-                //Polki
-                if (hit.transform != null && hit.transform.GetComponent<Polki>())
-                {
-                    Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
-                    interactiveCross.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        hit.transform.GetComponent<Polki>().Open();
-                    }
-                }
-                else
-                {
-                    interactiveCross.SetActive(false);
-                }
+            if (hit.transform != null && hit.transform.GetComponent<Polki>() || hit.transform.GetComponent<Notes>() || hit.transform.GetComponent<OpenedDoor>() || hit.transform.GetComponent<ItamLay>() || hit.transform.GetComponent<Door>())
+            {
+                interactiveCross.SetActive(true);
+            }
+            else
+            {
+                interactiveCross.SetActive(false);
             }
         }
     }
