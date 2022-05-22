@@ -128,7 +128,7 @@ namespace Player
                 }
             }
 
-            if (hit.transform != null && hit.transform.GetComponent<Polki>() || hit.transform.GetComponent<Notes>() || hit.transform.GetComponent<OpenedDoor>() || hit.transform.GetComponent<ItamLay>() || hit.transform.GetComponent<Door>())
+            if (hit.transform != null && hit.transform.GetComponent<Polki>() || hit.transform != null && hit.transform.GetComponent<Notes>() || hit.transform != null && hit.transform.GetComponent<OpenedDoor>() || hit.transform != null && hit.transform.GetComponent<ItamLay>() || hit.transform != null && hit.transform.GetComponent<Door>())
             {
                 interactiveCross.SetActive(true);
             }
