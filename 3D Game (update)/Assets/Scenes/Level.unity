@@ -1564,6 +1564,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba11f472dfffb946a6c2c1341075fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &400713073 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3326056532647627772, guid: 2afcebf4c109afa4387a0ef880e906f2, type: 3}
+  m_PrefabInstance: {fileID: 9169913106781862796}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &401159072
 GameObject:
   m_ObjectHideFlags: 0
@@ -12054,6 +12059,25 @@ MonoBehaviour:
   ss: {fileID: 8040610985992053279}
   _inventoryPanel: {fileID: 1317220591}
   _keyData: {fileID: 11400000, guid: 2b5d00551b633af4fa20e0562c0fc665, type: 2}
+--- !u!320 &5316598411382247761
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5316598411382247757}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: e80458699d1b8cd48b26139502f4efa9, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -90974571788378153, guid: e80458699d1b8cd48b26139502f4efa9, type: 2}
+    value: {fileID: 400713073}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1001 &5409913921240902694
 PrefabInstance:
   m_ObjectHideFlags: 0

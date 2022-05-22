@@ -5,11 +5,10 @@ using UnityEngine;
 namespace SojaExiles
 
 {
-
-	public class Drawer_Pull_X : MonoBehaviour
+	public class opencloseDoor1 : MonoBehaviour
 	{
 
-		public Animator pull_01;
+		public Animator openandclose1;
 		public bool open;
 		public Transform Player;
 
@@ -24,12 +23,11 @@ namespace SojaExiles
 				if (Player)
 				{
 					float dist = Vector3.Distance(Player.position, transform.position);
-					if (dist < 10)
+					if (dist < 2.5f)
 					{
-						print("object name");
 						if (open == false)
 						{
-							if (Input.GetMouseButtonDown(0))
+							if (Input.GetKeyDown(KeyCode.E))
 							{
 								StartCoroutine(opening());
 							}
@@ -38,7 +36,7 @@ namespace SojaExiles
 						{
 							if (open == true)
 							{
-								if (Input.GetMouseButtonDown(0))
+								if (Input.GetKeyDown(KeyCode.E))
 								{
 									StartCoroutine(closing());
 								}
@@ -55,16 +53,16 @@ namespace SojaExiles
 
 		IEnumerator opening()
 		{
-			print("you are opening the door");
-			pull_01.Play("openpull_01");
+			//print("you are opening the door");
+			openandclose1.Play("Opening 1");
 			open = true;
 			yield return new WaitForSeconds(.5f);
 		}
 
 		IEnumerator closing()
 		{
-			print("you are closing the door");
-			pull_01.Play("closepush_01");
+			//print("you are closing the door");
+			openandclose1.Play("Closing 1");
 			open = false;
 			yield return new WaitForSeconds(.5f);
 		}
