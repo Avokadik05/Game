@@ -2214,7 +2214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameNameText: {fileID: 1291841497}
-  gameName: THIS GAME
+  gameName: The Losted Past
   gameVersionText: {fileID: 190257475}
   gameVersion: pre-alpha v1
   resolutionDropdown: {fileID: 935357143}
@@ -3737,11 +3737,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 255464775446962339, guid: e50a2a7531c33444987d039a621ffb42, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 591.8184
+      value: 1032.3938
       objectReference: {fileID: 0}
     - target: {fileID: 255464775446962339, guid: e50a2a7531c33444987d039a621ffb42, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 110.96588
+      value: 110.9659
       objectReference: {fileID: 0}
     - target: {fileID: 255464775446962339, guid: e50a2a7531c33444987d039a621ffb42, type: 3}
       propertyPath: m_LocalPosition.x

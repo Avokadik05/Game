@@ -15,3 +15,4 @@ MonoBehaviour:
   Name: Key
   Icon: {fileID: 21300000, guid: 568124a98d7d10d42bb8be9929b8b4df, type: 3}
   Prefab: {fileID: 393671769954264907, guid: a01bdfa612687bf429c971b465ed7219, type: 3}
+  Dropable: 0

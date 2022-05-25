@@ -13,6 +13,7 @@ namespace Player
 
         [SerializeField] private float maxDistanceRay;
         private bool isNote = false;
+        private bool isFlash = false;
         private Keys keys;
         [SerializeField]
         private SaveSystem ss;
@@ -23,9 +24,16 @@ namespace Player
         [SerializeField]
         private ItemData _keyData;
 
+        [SerializeField]
+        private ItemData _flashlightData;
+
+        [SerializeField]
+        private Light _flashlight;
+
         private void Start()
         {
             interactiveCross.SetActive(false);
+            _flashlight.enabled = false;
         }
 
         private void Update()
@@ -135,6 +143,24 @@ namespace Player
             else
             {
                 interactiveCross.SetActive(false);
+            }
+
+            //
+            if (_inventoryPanel.CurrentItem && _inventoryPanel.CurrentItem == _flashlightData)
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    isFlash = !isFlash;
+
+                    if (isFlash)
+                    {
+                        _flashlight.enabled = true;
+                    }
+                    else
+                    {
+                        _flashlight.enabled = false;
+                    }
+                }
             }
         }
     }

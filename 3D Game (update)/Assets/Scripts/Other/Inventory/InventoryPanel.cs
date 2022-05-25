@@ -93,11 +93,15 @@ namespace Other.Inventory
         {
             //print("Drop");
             
-            if (CurrentItem)
+            if (CurrentItem.Dropable)
             {
                 Instantiate(CurrentItem.Prefab, _target.position, Quaternion.identity, _container);
                 _itemDatas[_currentNumberCell] = null;
                 Refresh?.Invoke();
+            }
+            else
+            {
+                print("No Dropable");
             }
         }
     }
