@@ -145,7 +145,7 @@ namespace Player
                 interactiveCross.SetActive(false);
             }
 
-            //
+            //Flashlight
             if (_inventoryPanel.CurrentItem && _inventoryPanel.CurrentItem == _flashlightData)
             {
                 if (Input.GetKeyDown(KeyCode.F))
@@ -161,6 +161,11 @@ namespace Player
                         _flashlight.enabled = false;
                     }
                 }
+            }
+            else if(_inventoryPanel.CurrentItem || _inventoryPanel.CurrentItem != _flashlightData)
+            {
+                _flashlight.enabled = false;
+                isFlash = false;
             }
         }
     }
