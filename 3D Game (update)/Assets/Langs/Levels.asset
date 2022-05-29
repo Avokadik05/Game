@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028f6fd4b5648da408750b332adcc576, type: 3}
+  m_Name: Levels
+  m_EditorClassIdentifier: 
+  languages:
+  - Russian
+  - English
+  words:
+  - phrases:
+    - langName: Russian
+      phrase: "\u0412\u042B\u0425\u041E\u0414"
+    - langName: English
+      phrase: EXIT
+    key: "\u0412\u042B\u0425\u041E\u0414"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u044D\u0444\u0444\u0435\u043A\u0442\u043E\u0432"
+    - langName: English
+      phrase: Effects volume
+    key: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u044D\u0444\u0444\u0435\u043A\u0442\u043E\u0432"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u0437\u0432\u0443\u043A\u0430"
+    - langName: English
+      phrase: Sound volume
+    key: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u0437\u0432\u0443\u043A\u0430"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0414\u0440\u0443\u0433\u043E\u0435"
+    - langName: English
+      phrase: Other
+    key: "\u0414\u0440\u0443\u0433\u043E\u0435"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u041F\u043E\u043B\u043D\u043E\u044D\u043A\u0440\u0430\u043D\u043D\u044B\u0439
+        \u0440\u0435\u0436\u0438\u043C"
+    - langName: English
+      phrase: Full screen mode
+    key: "\u041F\u043E\u043B\u043D\u043E\u044D\u043A\u0440\u0430\u043D\u043D\u044B\u0439
+      \u0440\u0435\u0436\u0438\u043C"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0413\u0440\u0430\u0444\u0438\u043A\u0430"
+    - langName: English
+      phrase: Graphic
+    key: "\u0413\u0440\u0430\u0444\u0438\u043A\u0430"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418"
+    - langName: English
+      phrase: SETTINGS
+    key: "\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418"
+    hide: 1
