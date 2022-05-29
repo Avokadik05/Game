@@ -9,5 +9,6 @@ namespace Other.Inventory
         public Sprite Icon;
         public GameObject Prefab;
         public bool Dropable;
+        public bool Removeble;
     }
 }

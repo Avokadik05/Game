@@ -104,5 +104,18 @@ namespace Other.Inventory
                 print("No Dropable");
             }
         }
+
+        public void Remove()
+        {
+            if (CurrentItem.Removeble)
+            {               
+                _itemDatas[_currentNumberCell] = null;
+                Refresh?.Invoke();
+            }
+            else
+            {
+                print("No Removeble");
+            }
+        }
     }
 }

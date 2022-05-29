@@ -1,6 +1,7 @@
 using Objects;
 using Other.Inventory;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Player
 {
@@ -91,9 +92,6 @@ namespace Player
                         Destroy(hit.transform.gameObject);
                         ss.isDesKey = true;
                     }
-
-
-                    //print(itemData.Name);
                 }
             }
 
@@ -166,6 +164,11 @@ namespace Player
             {
                 _flashlight.enabled = false;
                 isFlash = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.R) && _inventoryPanel.CurrentItem)
+            {
+                _inventoryPanel.Remove();
             }
         }
     }
