@@ -18,6 +18,27 @@ MonoBehaviour:
   words:
   - phrases:
     - langName: Russian
+      phrase: "\u041F\u0440\u0438\u0432\u0435\u0442 \u043C\u0438\u0440!"
+    - langName: English
+      phrase: Hello world!
+    key: "\u041F\u0440\u0438\u0432\u0435\u0442 \u043C\u0438\u0440!"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u041D\u043E\u0432\u0430\u044F \u0438\u0433\u0440\u0430"
+    - langName: English
+      phrase: New game
+    key: "\u041D\u043E\u0432\u0430\u044F \u0438\u0433\u0440\u0430"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0412\u044B\u0445\u043E\u0434 \u0438\u0437 \u0438\u0433\u0440\u044B"
+    - langName: English
+      phrase: Quit the game
+    key: "\u0412\u044B\u0445\u043E\u0434 \u0438\u0437 \u0438\u0433\u0440\u044B"
+    hide: 1
+  - phrases:
+    - langName: Russian
       phrase: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
     - langName: English
       phrase: Settings

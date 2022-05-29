@@ -20,12 +20,17 @@ public class TextTranslator : MonoBehaviour
     }
     public void ReTranslate()
     {
+        var tmT = GetComponent<TextMesh>();
         var tmpT = GetComponent<TMP_Text>();
         var T = GetComponent<Text>();
 
         if (tmpT)
         {
             tmpT.text = LangsList.GetWord(key);
+        }
+        if (tmT)
+        {
+            tmT.text = LangsList.GetWord(key);
         }
         if (T)
         {
