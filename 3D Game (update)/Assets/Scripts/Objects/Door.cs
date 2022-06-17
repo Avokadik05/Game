@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Other.Inventory;
 
 public class Door : MonoBehaviour
 {
     private bool isOpened;
-    [SerializeField] private Animator anim;
+    [SerializeField]
+    private Animator anim;
 
     public void Open()
     {
@@ -16,5 +18,11 @@ public class Door : MonoBehaviour
     public void Closed()
     {
         anim.SetTrigger("isClosed");
+    }
+
+    public void Scene()
+    {
+        isOpened = false;
+        Open();
     }
 }

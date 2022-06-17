@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Playables;
 
 public class CutScene : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class CutScene : MonoBehaviour
     private CustomCharacterController controller;
     [SerializeField]
     private CinemachineVirtualCamera cam;
+    [SerializeField]
+    private PlayableDirector director;
 
     public void OffController()
     {
@@ -20,5 +23,10 @@ public class CutScene : MonoBehaviour
     {
         controller.enabled = true;
         cam.enabled = true;
+    }
+
+    public void CutSceneNote()
+    {
+        director.Play();
     }
 }

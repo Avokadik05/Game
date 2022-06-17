@@ -11,6 +11,9 @@ public class EventSound : MonoBehaviour
     public AudioClip neverClose;
 
     public AudioClip List;
+    public AudioClip Noise;
+
+    public AudioClip dig1;
 
 
     void Start()
@@ -36,5 +39,15 @@ public class EventSound : MonoBehaviour
     public void VoidEventSoundList()
     {
         mySourse.PlayOneShot(List);
+    }
+
+    public void VoidEventSoundNoise()
+    {
+        mySourse.PlayOneShot(Noise);
+    }
+
+    public void VoidEventSound1()
+    {
+        mySourse.PlayOneShot(dig1);
     }
 }

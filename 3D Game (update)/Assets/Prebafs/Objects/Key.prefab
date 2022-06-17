@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2110583415599993751}
   - component: {fileID: 4776412557982590416}
   - component: {fileID: 9027901583440181032}
-  - component: {fileID: 1177978187}
   - component: {fileID: 323718034}
   m_Layer: 0
   m_Name: Key
@@ -32,6 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.5689, y: 0.982, z: 1.0714002}
   m_LocalScale: {x: 2.14, y: 2.14, z: 2.14}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,6 +55,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -114,18 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemData: {fileID: 11400000, guid: 2b5d00551b633af4fa20e0562c0fc665, type: 2}
---- !u!114 &1177978187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 393671769954264907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b71ede4609b33924ea77d9a4ffb2f482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &323718034
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -7,14 +7,25 @@ using UnityEngine.SceneManagement;
 
 public class PausedMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject inventory;
-    [SerializeField] private GameObject inventory2;
-    public GameObject pausedMenu;
-    public GameObject exitMenu;
-    public GameObject settingMenu;
-    public GameObject crosshair;
-    public GameObject staminaSlider;
-    public CinemachineBrain cameraTargget;
+    [Header("—сылки на объекты")]
+    [SerializeField]
+    private GameObject inventory;
+    [SerializeField]
+    private GameObject inventory2;
+    [SerializeField]
+    private GameObject pausedMenu;
+    [SerializeField]
+    private GameObject exitMenu;
+    [SerializeField]
+    private GameObject settingMenu;
+    [SerializeField]
+    private GameObject crosshair;
+    [SerializeField]
+    private GameObject staminaSlider;
+    [SerializeField]
+    private CinemachineBrain cameraTargget;
+    
+    [Header("Other")]
     [SerializeField] private KeyCode keyPausedMenu;
     bool isPausedMenu = false;
 

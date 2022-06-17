@@ -32,5 +32,6 @@ public class Notes : MonoBehaviour
         cameraTargget.SetActive(true);
         Time.timeScale = 1f;
         Player.SetActive(true);
+        Destroy(gameObject);
     }
 }

@@ -7,30 +7,32 @@ namespace Player
 {
     public class Interactive : MonoBehaviour
     {
-        [SerializeField] private Camera cam;
+        [Header("RayCast")]
+        [SerializeField]
+        private Camera cam;
+        [SerializeField]
+        private float maxDistanceRay;
         private Ray ray;
         private RaycastHit hit;
-        [SerializeField] private GameObject interactiveCross;
 
-        [SerializeField] private float maxDistanceRay;
-        private bool isNote = false;
-        private bool isFlash = false;
-        private Keys keys;
-        [SerializeField]
-        private SaveSystem ss;
-
+        [Header("Inventory")]
         [SerializeField]
         private InventoryPanel _inventoryPanel;
-
         [SerializeField]
         private ItemData _keyData;
-
         [SerializeField]
         private ItemData _flashlightData;
-
         [SerializeField]
         private Light _flashlight;
+        private bool isNote = false;
+        private bool isFlash = false;
 
+        [Header("Other")]
+        [SerializeField]
+        private GameObject interactiveCross;
+        [SerializeField]
+        private CutScene cut;
+        
         private void Start()
         {
             interactiveCross.SetActive(false);
@@ -39,9 +41,9 @@ namespace Player
 
         private void Update()
         {
-            Ray();
-            DrawRay();
-            InteractiveObj();
+            Ray(); // создаёт луч
+            DrawRay(); // рисует луч
+            InteractiveObj(); // обьекты с которыми можно взаимодействовать
         }
 
         private void Ray()
@@ -65,7 +67,7 @@ namespace Player
 
         private void InteractiveObj()
         {
-            //Door
+            //ClosedDoor
             if (hit.transform != null && hit.transform.GetComponent<Door>())
             {
                 Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
@@ -81,19 +83,6 @@ namespace Player
                     }
                 }
             }
-            else if (hit.transform != null && hit.transform.GetComponent<ItamLay>())
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    var itemData = hit.transform.GetComponent<ItamLay>().ItemData;
-
-                    if (_inventoryPanel.TryAddItem(itemData))
-                    {
-                        Destroy(hit.transform.gameObject);
-                        ss.isDesKey = true;
-                    }
-                }
-            }
 
             //OpenedDoor
             if (hit.transform != null && hit.transform.GetComponent<OpenedDoor>())
@@ -102,6 +91,20 @@ namespace Player
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.transform.GetComponent<OpenedDoor>().Open();
+                }
+            }
+
+            //Inventory objects
+            if (hit.transform != null && hit.transform.GetComponent<ItamLay>())
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    var itemData = hit.transform.GetComponent<ItamLay>().ItemData;
+
+                    if (_inventoryPanel.TryAddItem(itemData))
+                    {
+                        Destroy(hit.transform.gameObject);
+                    }
                 }
             }
             
@@ -120,6 +123,7 @@ namespace Player
                     else
                     {
                         hit.transform.GetComponent<Notes>().ExitNote();
+                        cut.CutSceneNote();
                     }
                 }
             }
@@ -134,6 +138,7 @@ namespace Player
                 }
             }
 
+            //Crosshair
             if (hit.transform != null && hit.transform.GetComponent<Polki>() || hit.transform != null && hit.transform.GetComponent<Notes>() || hit.transform != null && hit.transform.GetComponent<OpenedDoor>() || hit.transform != null && hit.transform.GetComponent<ItamLay>() || hit.transform != null && hit.transform.GetComponent<Door>())
             {
                 interactiveCross.SetActive(true);
@@ -164,11 +169,6 @@ namespace Player
             {
                 _flashlight.enabled = false;
                 isFlash = false;
-            }
-
-            if (Input.GetKeyDown(KeyCode.R) && _inventoryPanel.CurrentItem)
-            {
-                _inventoryPanel.Remove();
             }
         }
     }
