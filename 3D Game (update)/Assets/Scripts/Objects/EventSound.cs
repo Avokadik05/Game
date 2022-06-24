@@ -14,6 +14,7 @@ public class EventSound : MonoBehaviour
     public AudioClip Noise;
 
     public AudioClip dig1;
+    public AudioClip dig2;
 
 
     void Start()
@@ -49,5 +50,10 @@ public class EventSound : MonoBehaviour
     public void VoidEventSound1()
     {
         mySourse.PlayOneShot(dig1);
+    }
+
+    public void VoidEventSound2()
+    {
+        mySourse.PlayOneShot(dig2);
     }
 }
