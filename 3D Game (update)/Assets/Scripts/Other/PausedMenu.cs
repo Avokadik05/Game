@@ -26,8 +26,7 @@ public class PausedMenu : MonoBehaviour
     private CinemachineBrain cameraTargget;
     
     [Header("Other")]
-    [SerializeField] private KeyCode keyPausedMenu;
-    bool isPausedMenu = false;
+    public static bool GameIsPause = false;
 
     private void Start()
     {
@@ -42,41 +41,45 @@ public class PausedMenu : MonoBehaviour
     }
     void ActiveMenu()
     {
-        if (Input.GetKeyDown(keyPausedMenu)) 
+        if (Input.GetKeyDown(KeyCode.Escape)) 
         {
-            isPausedMenu = !isPausedMenu;
-        }
-
-        if (isPausedMenu)
-        {
-            pausedMenu.SetActive(true);
-            crosshair.SetActive(false);
-            inventory.SetActive(false);
-            inventory2.SetActive(false);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Time.timeScale = 0f;
-            cameraTargget.enabled = false;
-            staminaSlider.SetActive(false);
-
-        }
-        else
-        {
-            pausedMenu.SetActive(false);
-            crosshair.SetActive(true);
-            inventory.SetActive(true);
-            inventory2.SetActive(true);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            Time.timeScale = 1f;
-            cameraTargget.enabled = true;
-            staminaSlider.SetActive(true);
+            if (GameIsPause)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
         }
     }
 
-    public void PauseMenuContinue()
+    public void Resume()
     {
-        isPausedMenu = false;
+        GameIsPause = false;
+        pausedMenu.SetActive(false);
+        crosshair.SetActive(true);
+        inventory.SetActive(true);
+        inventory2.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+        cameraTargget.enabled = true;
+        staminaSlider.SetActive(true);
+    }
+
+    public void Pause()
+    {
+        GameIsPause = true;
+        pausedMenu.SetActive(true);
+        crosshair.SetActive(false);
+        inventory.SetActive(false);
+        inventory2.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+        cameraTargget.enabled = false;
+        staminaSlider.SetActive(false);
     }
 
     public void PauseMenuSetting()

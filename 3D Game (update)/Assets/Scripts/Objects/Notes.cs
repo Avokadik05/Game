@@ -1,15 +1,13 @@
-using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Notes : MonoBehaviour
 {
     [SerializeField] private GameObject notePanel;
-    [SerializeField] private GameObject Player;
     public EventSound sound;
     public GameObject cameraTargget;
+    public bool isNote = false;
 
     private void Start()
     {
@@ -18,20 +16,23 @@ public class Notes : MonoBehaviour
 
     public void OnNote()
     {
-        notePanel.SetActive(true);
-        cameraTargget.SetActive(false);
+        isNote = true;
         Time.timeScale = 0f;
-        Player.SetActive(false);
+        cameraTargget.SetActive(false);
+        notePanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         sound.VoidEventSoundList();
 
     }
 
     public void ExitNote()
     {
-        notePanel.SetActive(false);
-        cameraTargget.SetActive(true);
+        isNote = false;
         Time.timeScale = 1f;
-        Player.SetActive(true);
-        Destroy(gameObject);
+        cameraTargget.SetActive(true);
+        notePanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

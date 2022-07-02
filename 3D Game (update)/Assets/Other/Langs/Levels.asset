@@ -18,6 +18,103 @@ MonoBehaviour:
   words:
   - phrases:
     - langName: Russian
+      phrase: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \"B\", \u0447\u0442\u043E\u0431\u044B
+        \u0437\u0430\u043A\u0440\u044B\u0442\u044C"
+    - langName: English
+      phrase: Press "B" to close
+    key: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \"B\", \u0447\u0442\u043E\u0431\u044B
+      \u0437\u0430\u043A\u0440\u044B\u0442\u044C"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0417\u0430\u043F\u0438\u0441\u044C \u21161 - \u041F\u043E \u0434\u043E\u0440\u043E\u0433\u0435
+        \u0441\u043B\u043E\u043C\u0430\u043B\u0430\u0441\u044C \u043C\u0430\u0448\u0438\u043D\u0430,
+        \u0441\u0435\u0439\u0447\u0430\u0441 \u0441\u043E\u0431\u0435\u0440\u0443
+        \u0432\u0435\u0449\u0438 \u0438 \u043F\u043E\u0439\u0434\u0443 \u043F\u0435\u0448\u043A\u043E\u043C.
+        \u0421\u0443\u0434\u044F \u043F\u043E \u043A\u0430\u0440\u0442\u0435, \u044D\u0442\u043E
+        \u043D\u0435 \u0437\u0430\u0439\u043C\u0435\u0442 \u043C\u043D\u043E\u0433\u043E
+        \u0432\u0440\u0435\u043C\u0435\u043D\u0438. \u041A\u0440\u043E\u043C\u0435
+        \u0442\u043E\u0433\u043E, \u044D\u0442\u043E \u0441\u043B\u0443\u0447\u0438\u043B\u043E\u0441\u044C
+        \u0441\u043D\u043E\u0432\u0430..."
+    - langName: English
+      phrase: Entry #1 - A car broke down on the way, now I'll pack my things and
+        go on foot. Judging by the map, it won't take long. Besides, it happened
+        again...
+    key: n1
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0417\u0430\u043F\u0438\u0441\u044C \u21162 - \u0412\u043E\u0439\u0434\u044F
+        \u0432 \u0434\u043E\u043C, \u043D\u0438\u043A\u043E\u0433\u043E \u043D\u0435
+        \u0431\u044B\u043B\u043E. \u042F \u0442\u0430\u043A\u0436\u0435 \u043D\u0430\u0448\u0435\u043B
+        \u043B\u0438\u0441\u0442 \u0431\u0443\u043C\u0430\u0433\u0438 \u043D\u0430
+        \u0441\u0442\u043E\u043B\u0435. \u041A\u0442\u043E \u0442\u0430\u043A\u043E\u0439
+        \u0410\u043D\u0430\u0442\u043E\u043B\u0438\u0439 \u041C. \u0410 \u0433\u0434\u0435
+        \u043C\u0430\u043C\u0430?"
+    - langName: English
+      phrase: Entry #2 - Entering the house, no one was there. I also found a piece
+        of paper on the table. Who is Anatoly M. And where is mom?
+    key: n2
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0417\u0430\u043F\u0438\u0441\u044C \u21163 - \u042F \u043E\u0447\u043D\u0443\u043B\u0441\u044F
+        \u0432 \u043F\u043E\u0434\u0432\u0430\u043B\u0435, \u0432\u043E\u043E\u0431\u0449\u0435
+        \u043D\u0435 \u043F\u043E\u043D\u0438\u043C\u0430\u044E, \u0447\u0442\u043E
+        \u043F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u043E... \u041D\u043E \u0442\u043E\u0447\u043D\u043E
+        \u0437\u043D\u0430\u044E, \u0447\u0442\u043E \u043C\u043D\u0435 \u043D\u0443\u0436\u043D\u043E
+        \u0432\u044B\u0431\u0438\u0440\u0430\u0442\u044C\u0441\u044F \u043E\u0442\u0441\u044E\u0434\u0430
+        \u0438 \u0438\u0441\u043A\u0430\u0442\u044C \u043C\u0430\u043C\u0443."
+    - langName: English
+      phrase: "Entry #3 - I woke up in the basement, I don\u2019t understand what
+        happened at all ... But I know for sure that I need to get out of here and
+        look for my mother."
+    key: n3
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0417\u0430\u043F\u0438\u0441\u044C \u21166"
+    - langName: English
+      phrase: "Record \u21166"
+    key: "\u0417\u0430\u043F\u0438\u0441\u044C \u21166"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0417\u0430\u043F\u0438\u0441\u044C \u21165"
+    - langName: English
+      phrase: "Record \u21165"
+    key: "\u0417\u0430\u043F\u0438\u0441\u044C \u21165"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0417\u0430\u043F\u0438\u0441\u044C \u21164"
+    - langName: English
+      phrase: "Record \u21164"
+    key: "\u0417\u0430\u043F\u0438\u0441\u044C \u21164"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0417\u0430\u043F\u0438\u0441\u044C \u21163"
+    - langName: English
+      phrase: "Record \u21163"
+    key: "\u0417\u0430\u043F\u0438\u0441\u044C \u21163"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0417\u0430\u043F\u0438\u0441\u044C \u21162"
+    - langName: English
+      phrase: "Record \u21162"
+    key: "\u0417\u0430\u043F\u0438\u0441\u044C \u21162"
+    hide: 1
+  - phrases:
+    - langName: Russian
+      phrase: "\u0417\u0430\u043F\u0438\u0441\u044C \u21161"
+    - langName: English
+      phrase: "Record \u21161"
+    key: "\u0417\u0430\u043F\u0438\u0441\u044C \u21161"
+    hide: 1
+  - phrases:
+    - langName: Russian
       phrase: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \"E\", \u0447\u0442\u043E\u0431\u044B
         \u0437\u0430\u043A\u0440\u044B\u0442\u044C"
     - langName: English
@@ -71,7 +168,7 @@ MonoBehaviour:
       \u043F\u043E \u0442\u0435\u0431\u0435 \u0438 \u043F\u043E \u0434\u043E\u043C\u0443,
       \u0441 \u043D\u0435\u0442\u0435\u0440\u043F\u0435\u043D\u0438\u0435\u043C \u0436\u0434\u0443
       \u0442\u0432\u043E\u0435\u0433\u043E \u043F\u0438\u0441\u044C\u043C\u0430!"
-    hide: 0
+    hide: 1
   - phrases:
     - langName: Russian
       phrase: "31 \u0434\u0435\u043A\u0430\u0431\u0440\u044F 1995 \u0433."

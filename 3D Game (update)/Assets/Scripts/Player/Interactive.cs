@@ -24,7 +24,6 @@ namespace Player
         private ItemData _flashlightData;
         [SerializeField]
         private Light _flashlight;
-        private bool isNote = false;
         private bool isFlash = false;
 
         [Header("Other")]
@@ -32,6 +31,8 @@ namespace Player
         private GameObject interactiveCross;
         [SerializeField]
         private CutScene cut;
+        [SerializeField]
+        private Notes note;
         
         private void Start()
         {
@@ -114,16 +115,13 @@ namespace Player
                 Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    isNote = !isNote;
-
-                    if (isNote)
+                    if (note.isNote)
                     {
-                        hit.transform.GetComponent<Notes>().OnNote();
+                        note.ExitNote();
                     }
                     else
                     {
-                        hit.transform.GetComponent<Notes>().ExitNote();
-                        cut.CutSceneNote();
+                        note.OnNote();
                     }
                 }
             }
