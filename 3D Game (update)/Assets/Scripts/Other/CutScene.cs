@@ -12,6 +12,8 @@ public class CutScene : MonoBehaviour
     private CinemachineVirtualCamera cam;
     [SerializeField]
     private PlayableDirector director;
+    [SerializeField]
+    private QTEEvent obj;
 
     public void OffController()
     {
@@ -29,4 +31,9 @@ public class CutScene : MonoBehaviour
     {
         director.Play();
     }
+
+    /*public void KillObj()
+    {
+        Destroy(obj);
+    }*/
 }
