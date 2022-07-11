@@ -1,8 +1,5 @@
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PausedMenu : MonoBehaviour
@@ -58,6 +55,7 @@ public class PausedMenu : MonoBehaviour
     {
         GameIsPause = false;
         pausedMenu.SetActive(false);
+        settingMenu.SetActive(false);
         crosshair.SetActive(true);
         inventory.SetActive(true);
         inventory2.SetActive(true);
@@ -113,14 +111,5 @@ public class PausedMenu : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
-    }
-    public void InteractiveOptions()
-    {
-        crosshair.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        Time.timeScale = 0f;
-        cameraTargget.enabled = false;
-        staminaSlider.SetActive(false);
     }
 }

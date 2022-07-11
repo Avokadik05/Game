@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -69,7 +68,7 @@ public class LangsList : MonoBehaviour
         }
         else
         {
-            currLang = 1;
+            currLang = 0;
         }
     }
     

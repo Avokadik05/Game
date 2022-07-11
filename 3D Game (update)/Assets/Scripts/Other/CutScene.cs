@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.Playables;
@@ -13,7 +11,7 @@ public class CutScene : MonoBehaviour
     [SerializeField]
     private PlayableDirector director;
     [SerializeField]
-    private QTEEvent obj;
+    private QTEEvent qte;
 
     public void OffController()
     {
@@ -27,13 +25,8 @@ public class CutScene : MonoBehaviour
         cam.enabled = true;
     }
 
-    public void CutSceneNote()
+    public void CutScenePlay()
     {
         director.Play();
     }
-
-    /*public void KillObj()
-    {
-        Destroy(obj);
-    }*/
 }
