@@ -100,7 +100,12 @@ public class PausedMenu : MonoBehaviour
 
     public void StartGames()
     {
-        SceneManager.LoadScene("Loading");
+        SceneManager.LoadScene("Loading Forest");
+    }
+
+    public void GoToLevel()
+    {
+        SceneManager.LoadScene("Loading Level");
     }
 
     public void ExitToMenu()
