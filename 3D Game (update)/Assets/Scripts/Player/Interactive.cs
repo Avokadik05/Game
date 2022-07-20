@@ -67,6 +67,11 @@ namespace Player
             }
         }
 
+        public void OnFlash()
+        {
+            isFlash = true;
+        }
+
         private void InteractiveObj()
         {
             //ClosedDoor
