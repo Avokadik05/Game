@@ -1,12 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ForestCutTrigger : MonoBehaviour
 {
-    [SerializeField]
-    private CutScene cut;
+    public UnityEvent _enter;
 
     private void OnTriggerEnter(Collider other)
     {
-        cut.CutScenePlay();
+        _enter.Invoke();
     }
 }

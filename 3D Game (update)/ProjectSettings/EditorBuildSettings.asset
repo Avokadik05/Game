@@ -13,13 +13,16 @@ EditorBuildSettings:
     guid: d837cad119a485644b97e30845d764e1
   - enabled: 1
     path: Assets/Scenes/Forest.unity
-    guid: d2ef09ad20e0f424bb61e9297f0e9622
+    guid: e69a91aa1c44a244e82c88533bdf1c30
   - enabled: 1
     path: Assets/Scenes/Loading Level.unity
     guid: 1f1c29b51de50db43bdcb5c2e7de373c
   - enabled: 1
     path: Assets/Scenes/Level.unity
     guid: 6b843ba62e511fa4dbbe590e479d5ea6
+  - enabled: 1
+    path: Assets/Scenes/BasementLvl.unity
+    guid: 175bf771d88ccfe4ab02baa8dc2fa6f0
   - enabled: 1
     path: Assets/Scenes/Labyrinth.unity
     guid: 6b20e532e63f5ce4698093af3baea1a8

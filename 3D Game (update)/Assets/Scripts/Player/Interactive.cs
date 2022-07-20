@@ -1,7 +1,7 @@
 using Objects;
 using Other.Inventory;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace Player
 {
@@ -33,6 +33,7 @@ namespace Player
         private CutScene cut;
         [SerializeField]
         private Notes note;
+        public UnityEvent noteEvent;
         
         private void Start()
         {
@@ -118,6 +119,7 @@ namespace Player
                     if (note.isNote)
                     {
                         note.ExitNote();
+                        noteEvent.Invoke();
                     }
                     else
                     {

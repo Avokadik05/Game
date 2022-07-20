@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,7 +41,7 @@ public class CustomCharacterController : MonoBehaviour
     {
         playerNormalCollider.enabled = false;
         playerSeatCollider.enabled = true;
-        currentSpeed = 1f;
+        currentSpeed = 1.2f;
 
     }
 
@@ -51,6 +49,17 @@ public class CustomCharacterController : MonoBehaviour
     {
         playerNormalCollider.enabled = true;
         playerSeatCollider.enabled = false;
+    }
+
+    void Crouch()
+    {
+        animationInterpolation = Mathf.Lerp(animationInterpolation, -1.5f, Time.deltaTime * 3);
+        anim.SetFloat("x", Input.GetAxis("Horizontal") * animationInterpolation);
+        anim.SetFloat("y", Input.GetAxis("Vertical") * animationInterpolation);
+
+        currentSpeed = Mathf.Lerp(currentSpeed, runningSpeed, Time.deltaTime * 3);
+        staminaValue -= staminaReturn * Time.deltaTime * 5;
+
     }
 
     void Run()
@@ -104,10 +113,24 @@ public class CustomCharacterController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            Seat();
+            if (Input.GetKey(KeyCode.W))
+            {
+                Seat();
+                anim.SetBool("Crouch", false);
+                anim.SetBool("WalkCrouch", true);
+                currentSpeed = 1.2f;
+            }
+            else
+            {
+                anim.SetBool("Crouch", true);
+                anim.SetBool("WalkCrouch", false);
+                Seat();
+            }
         }
         else
         {
+            anim.SetBool("Crouch", false);
+            anim.SetBool("WalkCrouch", false);
             NoSeat();
         }
         //Если зажат пробел, то в аниматоре отправляем сообщение тригеру, который активирует анимацию прыжка

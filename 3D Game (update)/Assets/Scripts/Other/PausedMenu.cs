@@ -108,6 +108,11 @@ public class PausedMenu : MonoBehaviour
         SceneManager.LoadScene("Loading Level");
     }
 
+    public void GoToBasement()
+    {
+        SceneManager.LoadScene("BasementLvl");
+    }
+
     public void ExitToMenu()
     {
         SceneManager.LoadScene("MainMenu");

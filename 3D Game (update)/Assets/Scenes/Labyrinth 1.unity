@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.000018930461, g: 0.000000036171485, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12947,7 +12947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
-  maxDistanceRay: 1.5
+  maxDistanceRay: 2
   _inventoryPanel: {fileID: 1317220591}
   _keyData: {fileID: 11400000, guid: 2b5d00551b633af4fa20e0562c0fc665, type: 2}
   _flashlightData: {fileID: 11400000, guid: 20c00e8c86d395941921e687517555da, type: 2}
@@ -12955,6 +12955,9 @@ MonoBehaviour:
   interactiveCross: {fileID: 583814177}
   cut: {fileID: 0}
   note: {fileID: 0}
+  noteEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!320 &5316598411382247761
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -12977,6 +12980,8 @@ PlayableDirector:
   - key: {fileID: 3655574946416270394, guid: e80458699d1b8cd48b26139502f4efa9, type: 2}
     value: {fileID: 244665092}
   - key: {fileID: -5090498499922397136, guid: e80458699d1b8cd48b26139502f4efa9, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5303115161632013248, guid: e80458699d1b8cd48b26139502f4efa9, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
@@ -13096,6 +13101,7 @@ MonoBehaviour:
   controller: {fileID: 400713070}
   cam: {fileID: 1232712867}
   director: {fileID: 0}
+  qte: {fileID: 0}
 --- !u!1001 &8032364276155058679
 PrefabInstance:
   m_ObjectHideFlags: 0

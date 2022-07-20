@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.16788256, g: 0.21073583, b: 0.28994176, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028383, g: 0.22571409, b: 0.30692282, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5865,7 +5865,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0.9396927, z: 0, w: 0.34202003}
-  m_LocalPosition: {x: -83.661026, y: 1.5738173, z: 50.830994}
+  m_LocalPosition: {x: -70.87461, y: 1.663, z: 49.07384}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8039,7 +8039,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232712866}
   m_LocalRotation: {x: 0.17527069, y: 0.8246789, z: -0.37572616, w: 0.38472688}
-  m_LocalPosition: {x: -83.661026, y: 1.5738173, z: 50.830994}
+  m_LocalPosition: {x: -70.87461, y: 1.663, z: 49.07384}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8480,7 +8480,6 @@ GameObject:
   - component: {fileID: 1284635781}
   - component: {fileID: 1284635780}
   - component: {fileID: 1284635779}
-  - component: {fileID: 1284635778}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -8488,18 +8487,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1284635778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284635777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3335db9b56ad96347844ad0a5355d862, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1284635779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14140,7 +14127,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20924fe8a184b044b9a2b4b27a552b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cut: {fileID: 2088850091}
+  _enter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2088850091}
+        m_TargetAssemblyTypeName: CutScene, Assembly-CSharp
+        m_MethodName: CutScenePlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2088850091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15115,7 +15116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
-  maxDistanceRay: 1.5
+  maxDistanceRay: 2
   _inventoryPanel: {fileID: 1317220591}
   _keyData: {fileID: 11400000, guid: 2b5d00551b633af4fa20e0562c0fc665, type: 2}
   _flashlightData: {fileID: 11400000, guid: 20c00e8c86d395941921e687517555da, type: 2}
@@ -15123,6 +15124,9 @@ MonoBehaviour:
   interactiveCross: {fileID: 583814177}
   cut: {fileID: 5316598411382247764}
   note: {fileID: 347535519}
+  noteEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!320 &5316598411382247761
 PlayableDirector:
   m_ObjectHideFlags: 0
