@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class SaveSystem : MonoBehaviour
@@ -11,6 +12,7 @@ public class SaveSystem : MonoBehaviour
     public bool isDesKey;
     [SerializeField]
     private GameObject key;
+    public UnityEvent _save;
 
     // Start is called before the first frame update
     void Start()
@@ -28,15 +30,6 @@ public class SaveSystem : MonoBehaviour
             nextButton.interactable = false;
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        X = player.transform.position.x;
-        Y = player.transform.position.y;
-        Z = player.transform.position.z;
-    }
-
     public void Save()
     {
         PlayerPrefs.SetFloat("PosX", X);
@@ -44,6 +37,11 @@ public class SaveSystem : MonoBehaviour
         PlayerPrefs.SetFloat("PosZ", Z);
         PlayerPrefs.SetInt("DesKey", isDesKey ? 1 : 0);
         PlayerPrefs.Save();
+    }
+
+    private void Update()
+    {
+        CheckPosition();
     }
 
     public void Load()
@@ -54,7 +52,7 @@ public class SaveSystem : MonoBehaviour
         }
         else
         {
-            X = 0;
+            X = -70.942f;
         }
         
         if (PlayerPrefs.HasKey("PosY"))
@@ -63,7 +61,7 @@ public class SaveSystem : MonoBehaviour
         }
         else
         {
-            Y = 0;
+            Y = 0.01340663f;
         }
 
         if (PlayerPrefs.HasKey("PosZ"))
@@ -72,7 +70,7 @@ public class SaveSystem : MonoBehaviour
         }
         else
         {
-            Z = 0;
+            Z = 49.154f;
         }
         player.transform.position = new Vector3(X, Y, Z);
 
@@ -84,9 +82,9 @@ public class SaveSystem : MonoBehaviour
 
     public void Delete()
     {
-        X = 0;
-        Y = 0;
-        Z = 0;
+        X = -70.942f;
+        Y = 0.01340663f;
+        Z = 49.154f;
         isDesKey = false;
         PlayerPrefs.DeleteKey("PosX");
         PlayerPrefs.DeleteKey("PosY");
@@ -105,5 +103,23 @@ public class SaveSystem : MonoBehaviour
             newGamePanel.SetActive(false);
             SceneManager.LoadScene("Loading");
         }
+    }
+
+    public void CheckPosition()
+    {
+        X = player.transform.position.x;
+        Y = player.transform.position.y;
+        Z = player.transform.position.z;
+
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            _save.Invoke();
+            print("Успешно!");
+        }
+        else if (Input.GetKeyDown(KeyCode.V))
+        {
+            Load();
+        }
+
     }
 }

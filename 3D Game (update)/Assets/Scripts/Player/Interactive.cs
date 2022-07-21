@@ -34,7 +34,8 @@ namespace Player
         [SerializeField]
         private Notes note;
         public UnityEvent noteEvent;
-        
+        public UnityEvent _stairs;
+
         private void Start()
         {
             interactiveCross.SetActive(false);
@@ -140,6 +141,16 @@ namespace Player
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.transform.GetComponent<Polki>().Open();
+                }
+            }
+
+            //Stairs
+            if (hit.transform != null && hit.transform.GetComponent<Stairs>())
+            {
+                Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    _stairs.Invoke();
                 }
             }
 
