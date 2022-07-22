@@ -24,7 +24,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: -203655887218126122, guid: 56eceb872f9cb364399514bf5886d1ce, type: 3}
+  m_Clip: {fileID: -203655887218126122, guid: 638b4ecb3db30f446b84591de794be1d, type: 3}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
   m_Clip: {fileID: -203655887218126122, guid: b8026862b9c0b87468d0a1dbdb7ddb1f, type: 3}
-  m_Position: {x: -0.4651442, y: 0, z: 7.8636675}
+  m_Position: {x: 0.3278154, y: 0, z: 9.113167}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63
@@ -439,9 +439,9 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Walk
+    m_DisplayName: _walking
   - m_Version: 1
-    m_Start: 10.416666666666666
+    m_Start: 10.416666666666671
     m_ClipIn: 0
     m_Asset: {fileID: -2632388387957819378}
     m_Duration: 5.933333333333335
@@ -449,7 +449,7 @@ MonoBehaviour:
     m_ParentTrack: {fileID: 2249902339918840528}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.08333333333333393
+    m_BlendInDuration: 0.0833333333333286
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -501,7 +501,7 @@ MonoBehaviour:
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 0.08333333333333393
-    m_BlendOutDuration: 0.08333333333333393
+    m_BlendOutDuration: 0.0833333333333286
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -1385,7 +1385,7 @@ MonoBehaviour:
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
   m_Clip: {fileID: -203655887218126122, guid: c169a4fd217719b4993a70ea42eb41aa, type: 3}
-  m_Position: {x: -0.4651442, y: 0, z: 7.863667}
+  m_Position: {x: 0.32781535, y: 0, z: 9.113167}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63

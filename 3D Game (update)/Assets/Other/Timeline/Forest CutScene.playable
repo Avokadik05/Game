@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: -203655887218126122, guid: 56eceb872f9cb364399514bf5886d1ce, type: 3}
+  m_Clip: {fileID: -203655887218126122, guid: 638b4ecb3db30f446b84591de794be1d, type: 3}
   m_Position: {x: 1.3897837, y: 0, z: -4.107636}
   m_EulerAngles: {x: 0, y: 140, z: 0}
   m_UseTrackMatchFields: 1
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: -203655887218126122, guid: 56eceb872f9cb364399514bf5886d1ce, type: 3}
+  m_Clip: {fileID: -203655887218126122, guid: 638b4ecb3db30f446b84591de794be1d, type: 3}
   m_Position: {x: 109.45996, y: 6.4856296, z: -56.28369}
   m_EulerAngles: {x: 0, y: 140, z: 0}
   m_UseTrackMatchFields: 1
@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: -203655887218126122, guid: 56eceb872f9cb364399514bf5886d1ce, type: 3}
+  m_Clip: {fileID: -203655887218126122, guid: 638b4ecb3db30f446b84591de794be1d, type: 3}
   m_Position: {x: 70.338844, y: 6.4868836, z: -21.465042}
   m_EulerAngles: {x: 0, y: 140, z: 0}
   m_UseTrackMatchFields: 1
@@ -1446,7 +1446,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Walk
+    m_DisplayName: Walking 3
   - m_Version: 1
     m_Start: 10.083333333333334
     m_ClipIn: 0
@@ -1515,7 +1515,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Walk
+    m_DisplayName: Walking 3
   - m_Version: 1
     m_Start: 17.6
     m_ClipIn: 0
@@ -1584,7 +1584,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 0
-    m_DisplayName: Walk
+    m_DisplayName: Walking 3
   m_Markers:
     m_Objects: []
   m_InfiniteClipPreExtrapolation: 0

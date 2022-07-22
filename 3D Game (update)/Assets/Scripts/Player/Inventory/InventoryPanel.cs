@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
+using Player;
 
 namespace Other.Inventory
 {
@@ -10,7 +12,10 @@ namespace Other.Inventory
 
         [SerializeField] 
         private Transform _container;
-        
+
+        [SerializeField]
+        private Transform _container2;
+
         [SerializeField] 
         private InventoryData _inventoryData;
 
@@ -24,6 +29,9 @@ namespace Other.Inventory
         public event Action Refresh;
         public ItemData CurrentItem => _itemDatas[_currentNumberCell];
         public ItemData[] ItemDatas => _itemDatas;
+
+        [SerializeField]
+        private Interactive _intr;
 
         private void Start()
         {
@@ -104,7 +112,7 @@ namespace Other.Inventory
             }
             else
             {
-                print("No Dropable");
+                StartCoroutine(NonDrop());
             }
         }
 
@@ -119,6 +127,15 @@ namespace Other.Inventory
             {
                 print("No Removeble");
             }
+        }
+
+        IEnumerator NonDrop()
+        {
+            var copy = Instantiate(_intr._errorPrompt, new Vector3(850f, 1000f), Quaternion.identity, _container2);
+
+            yield return new WaitForSeconds(4f);
+
+            Destroy(copy);
         }
     }
 }

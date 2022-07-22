@@ -21,16 +21,14 @@ public class CustomCharacterController : MonoBehaviour
     [Header("Параметры персонажа")]
     public float jumpForce = 3.5f;
     public float walkingSpeed = 2f;
-    public float runningSpeed = 6f;
+    public float runningSpeed;
     public float stamina_speed = 2f; 
     public float currentSpeed;
     private float animationInterpolation = 1f;
-    public Collider playerNormalCollider;
-    public Collider playerSeatCollider;
+    public CapsuleCollider playerCollider;
 
     void Start()
     {
-        playerSeatCollider.enabled = false;
         // Прекрепляем курсор к середине экрана
         Cursor.lockState = CursorLockMode.Locked;
         // и делаем его невидимым
@@ -39,27 +37,18 @@ public class CustomCharacterController : MonoBehaviour
     
     void Seat()
     {
-        playerNormalCollider.enabled = false;
-        playerSeatCollider.enabled = true;
         currentSpeed = 1.2f;
+        playerCollider.height = 1.3f;
+        playerCollider.radius = 0.35f;
+        playerCollider.center = new Vector3(0.001656413f, 0.651f, 0.16f);
 
     }
 
     void NoSeat()
     {
-        playerNormalCollider.enabled = true;
-        playerSeatCollider.enabled = false;
-    }
-
-    void Crouch()
-    {
-        animationInterpolation = Mathf.Lerp(animationInterpolation, -1.5f, Time.deltaTime * 3);
-        anim.SetFloat("x", Input.GetAxis("Horizontal") * animationInterpolation);
-        anim.SetFloat("y", Input.GetAxis("Vertical") * animationInterpolation);
-
-        currentSpeed = Mathf.Lerp(currentSpeed, runningSpeed, Time.deltaTime * 3);
-        staminaValue -= staminaReturn * Time.deltaTime * 5;
-
+        playerCollider.height = 1.797984f;
+        playerCollider.radius = 0.2622133f;
+        playerCollider.center = new Vector3(0.001656413f, 0.9060238f, 0.1008566f);
     }
 
     void Run()
@@ -94,7 +83,7 @@ public class CustomCharacterController : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && staminaValue > 0)
         {
             // Зажаты ли еще кнопки A S D?
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftControl))
             {
                 // Если да, то мы идем пешком
                 Walk();
@@ -169,7 +158,7 @@ public class CustomCharacterController : MonoBehaviour
     }*/
     private void Stamina()
     {
-        if (staminaValue > 100f) staminaValue = 100f;
+        if (staminaValue > 300f) staminaValue = 300f;
         //staminaText.text = staminaSlider.value.ToString();
         staminaSlider.value = staminaValue;
 

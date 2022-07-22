@@ -28,6 +28,15 @@ namespace Player
 
         [Header("Other")]
         [SerializeField]
+        private GameObject _interactPrompt;
+        [SerializeField]
+        private GameObject _takePrompt;
+        [SerializeField]
+        private GameObject _flashPrompt;
+        [SerializeField]
+        private GameObject _dropPrompt;
+        public GameObject _errorPrompt;
+        [SerializeField]
         private GameObject interactiveCross;
         [SerializeField]
         private CutScene cut;
@@ -46,9 +55,10 @@ namespace Player
         {
             Ray(); // создаёт луч
             DrawRay(); // рисует луч
-            InteractiveObj(); // обьекты с которыми можно взаимодействовать
+            InteractiveObj(); // объекты с которыми можно взаимодействовать
         }
 
+#region ///RayCast///
         private void Ray()
         {
             ray = cam.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
@@ -67,10 +77,11 @@ namespace Player
                 Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.red);
             }
         }
-
+#endregion
+        
         public void OnFlash()
         {
-            isFlash = true;
+            isFlash = false;
         }
 
         private void InteractiveObj()
@@ -155,7 +166,7 @@ namespace Player
             }
 
             //Crosshair
-            if (hit.transform != null && hit.transform.GetComponent<Polki>() || hit.transform != null && hit.transform.GetComponent<Notes>() || hit.transform != null && hit.transform.GetComponent<OpenedDoor>() || hit.transform != null && hit.transform.GetComponent<ItamLay>() || hit.transform != null && hit.transform.GetComponent<Door>())
+            if (hit.transform != null && hit.transform.GetComponent<Polki>() || hit.transform != null && hit.transform.GetComponent<Notes>() || hit.transform != null && hit.transform.GetComponent<OpenedDoor>() || hit.transform != null && hit.transform.GetComponent<ItamLay>() || hit.transform != null && hit.transform.GetComponent<Door>() || hit.transform != null && hit.transform.GetComponent<Stairs>())
             {
                 interactiveCross.SetActive(true);
             }
@@ -164,9 +175,40 @@ namespace Player
                 interactiveCross.SetActive(false);
             }
 
+#region ///Prompt///
+            //Prompt
+            if (hit.transform != null && hit.transform.GetComponent<Door>() || hit.transform != null && hit.transform.GetComponent<OpenedDoor>() || hit.transform != null && hit.transform.GetComponent<Notes>() || hit.transform != null && hit.transform.GetComponent<Polki>() || hit.transform != null && hit.transform.GetComponent<Stairs>())
+            {
+                _interactPrompt.SetActive(true);
+            }
+            else
+            {
+                _interactPrompt.SetActive(false);
+            }
+            
+            if (hit.transform != null && hit.transform.GetComponent<ItamLay>())
+            {
+                _takePrompt.SetActive(true);
+            }
+            else
+            {
+                _takePrompt.SetActive(false);
+            }
+
+            if (_inventoryPanel.CurrentItem && !_inventoryPanel.CurrentItem.Dropable == false)
+            {
+                _dropPrompt.SetActive(true);
+            }
+            else
+            {
+                _dropPrompt.SetActive(false);
+            }
+ #endregion
+            
             //Flashlight
             if (_inventoryPanel.CurrentItem && _inventoryPanel.CurrentItem == _flashlightData)
             {
+                _flashPrompt.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     isFlash = !isFlash;
@@ -183,6 +225,7 @@ namespace Player
             }
             else if(_inventoryPanel.CurrentItem || _inventoryPanel.CurrentItem != _flashlightData)
             {
+                _flashPrompt.SetActive(false);
                 _flashlight.enabled = false;
                 isFlash = false;
             }
