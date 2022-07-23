@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Cinemachine;
 
 // необходимо чтобы название скрипта и название класса совпадали
 public class CustomCharacterController : MonoBehaviour
@@ -19,10 +18,6 @@ public class CustomCharacterController : MonoBehaviour
     public Rigidbody rig;
     public Transform mainCamera;
     AudioSource _playerAudio;
-    [SerializeField]
-    private CinemachineVirtualCamera _cm;
-    [SerializeField]
-    private Slider _sensSlider;
 
     [Header("Параметры персонажа")]
     public float jumpForce = 3.5f;
@@ -33,7 +28,6 @@ public class CustomCharacterController : MonoBehaviour
     private float animationInterpolation = 1f;
     public CapsuleCollider playerCollider;
     public AudioClip[] _footsteps;
-    float _maxSpeed;
 
     void Start()
     {
