@@ -2,9 +2,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class SettingMenu : MonoBehaviour
 {
+    [SerializeField]
+    private CinemachineVirtualCamera _cm;
+    [SerializeField]
+    private Slider _sensSlider;
+
+    float _maxSpeed;
+
     public Dropdown resolutionDropdown;
     public Dropdown qualityDropdown;
 
@@ -28,6 +36,18 @@ public class SettingMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.RefreshShownValue();
         LoadSettings(currentResolutionIndex);
+        
+        if(_maxSpeed <= 0)
+        {
+            _cm.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxSpeed = 2f;
+            _cm.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.m_MaxSpeed = 2f;
+            _sensSlider.value = 2f;
+        }
+        else
+        {
+            _cm.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxSpeed = _maxSpeed;
+            _cm.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.m_MaxSpeed = _maxSpeed;
+        }
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -56,6 +76,7 @@ public class SettingMenu : MonoBehaviour
         PlayerPrefs.SetInt("QualitySettingPreference", qualityDropdown.value);
         PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
         PlayerPrefs.SetInt("FullscreenPreference", System.Convert.ToInt32(Screen.fullScreen));
+        PlayerPrefs.SetFloat("SensitivityPreference", _sensSlider.value);
     }
 
     public void LoadSettings(int currentResolutionIndex)
@@ -74,7 +95,24 @@ public class SettingMenu : MonoBehaviour
             Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
         else
             Screen.fullScreen = true;
+
+        if (PlayerPrefs.HasKey("SensitivityPreference"))
+        {
+            _sensSlider.value = PlayerPrefs.GetFloat("SensitivityPreference");
+            _maxSpeed = PlayerPrefs.GetFloat("SensitivityPreference");
+        }
+        else
+        {
+            _maxSpeed = 2f;
+            _sensSlider.value = 2f;
+        }
     }
 
+    public void ChangeSensitivity()
+    {
+        _cm.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxSpeed = _maxSpeed;
+        _cm.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.m_MaxSpeed = _maxSpeed;
 
+        _maxSpeed = _sensSlider.value;
+    }
 }

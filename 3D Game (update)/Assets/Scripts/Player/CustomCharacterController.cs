@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 // необходимо чтобы название скрипта и название класса совпадали
 public class CustomCharacterController : MonoBehaviour
@@ -17,6 +18,11 @@ public class CustomCharacterController : MonoBehaviour
     public Animator anim;
     public Rigidbody rig;
     public Transform mainCamera;
+    AudioSource _playerAudio;
+    [SerializeField]
+    private CinemachineVirtualCamera _cm;
+    [SerializeField]
+    private Slider _sensSlider;
 
     [Header("Параметры персонажа")]
     public float jumpForce = 3.5f;
@@ -26,6 +32,8 @@ public class CustomCharacterController : MonoBehaviour
     public float currentSpeed;
     private float animationInterpolation = 1f;
     public CapsuleCollider playerCollider;
+    public AudioClip[] _footsteps;
+    float _maxSpeed;
 
     void Start()
     {
@@ -102,7 +110,7 @@ public class CustomCharacterController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
                 Seat();
                 anim.SetBool("Crouch", false);
@@ -166,5 +174,17 @@ public class CustomCharacterController : MonoBehaviour
         {
             currentSpeed = 2;
         }
+    }
+
+    private void Awake()
+    {
+        _playerAudio = GetComponent<AudioSource>();
+    }
+
+    void Footstep()
+    {
+        int randInd = Random.Range(0, _footsteps.Length);
+
+        _playerAudio.PlayOneShot(_footsteps[randInd]);
     }
 }
