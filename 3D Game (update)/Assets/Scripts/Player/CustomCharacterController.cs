@@ -102,6 +102,11 @@ public class CustomCharacterController : MonoBehaviour
             Walk();
         }
 
+        if (Input.GetKey(KeyCode.S))
+        {
+            currentSpeed = 1.3f;
+        }
+
         if (Input.GetKey(KeyCode.LeftControl))
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
