@@ -13,6 +13,7 @@ public class SaveSystem : MonoBehaviour
     [SerializeField]
     private GameObject key;
     public UnityEvent _save;
+    public bool _isLab;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,10 @@ public class SaveSystem : MonoBehaviour
         {
             X = PlayerPrefs.GetFloat("PosX");
         }
+        else if (_isLab)
+        {
+            X = -7.658f;
+        }
         else
         {
             X = -70.942f;
@@ -59,6 +64,10 @@ public class SaveSystem : MonoBehaviour
         {
             Y = PlayerPrefs.GetFloat("PosY");
         }
+        else if (_isLab)
+        {
+            Y = 6.428f;
+        }
         else
         {
             Y = 0.01340663f;
@@ -67,6 +76,10 @@ public class SaveSystem : MonoBehaviour
         if (PlayerPrefs.HasKey("PosZ"))
         {
             Z = PlayerPrefs.GetFloat("PosZ");
+        }
+        else if (_isLab)
+        {
+            Z = 0;
         }
         else
         {

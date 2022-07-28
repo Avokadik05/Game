@@ -18,6 +18,9 @@ public class CustomCharacterController : MonoBehaviour
     public Rigidbody rig;
     public Transform mainCamera;
     AudioSource _playerAudio;
+    RaycastHit _hit;
+    public LayerMask _floormask;
+    public LayerMask _forestmask;
 
     [Header("Параметры персонажа")]
     public float jumpForce = 3.5f;
@@ -27,7 +30,8 @@ public class CustomCharacterController : MonoBehaviour
     public float currentSpeed;
     private float animationInterpolation = 1f;
     public CapsuleCollider playerCollider;
-    public AudioClip[] _footsteps;
+    public AudioClip[] _floor;
+    public AudioClip[] _forest;
 
     void Start()
     {
@@ -182,8 +186,27 @@ public class CustomCharacterController : MonoBehaviour
 
     void Footstep()
     {
-        int randInd = Random.Range(0, _footsteps.Length);
+        if(Physics.Raycast (transform.position, -transform.up, out _hit, _floormask))
+        {
+            int randInd = Random.Range(0, _floor.Length);
 
-        _playerAudio.PlayOneShot(_footsteps[randInd]);
+            _playerAudio.PlayOneShot(_floor[randInd]);
+        }
+        else
+        {
+            int randInd = Random.Range(0, _forest.Length);
+
+            _playerAudio.PlayOneShot(_forest[randInd]);
+        }
+    }
+
+    public void OffEffects()
+    {
+        _playerAudio.enabled = false;
+    }
+
+    public void OnEffects()
+    {
+        _playerAudio.enabled = true;
     }
 }

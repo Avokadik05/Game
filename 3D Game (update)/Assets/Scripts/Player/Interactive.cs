@@ -49,6 +49,7 @@ namespace Player
         {
             interactiveCross.SetActive(false);
             _flashlight.enabled = false;
+            cam = Camera.main;
         }
 
         private void Update()
