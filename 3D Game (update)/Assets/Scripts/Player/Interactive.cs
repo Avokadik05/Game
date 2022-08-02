@@ -91,7 +91,7 @@ namespace Player
             if (hit.transform != null && hit.transform.GetComponent<Door>())
             {
                 Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
-                if (Input.GetKeyDown(KeyCode.E))
+                if (GameInput.Key.GetKeyDown("Interact"))
                 {
                     if (_inventoryPanel.CurrentItem && _inventoryPanel.CurrentItem == _keyData)
                     {
@@ -108,7 +108,7 @@ namespace Player
             if (hit.transform != null && hit.transform.GetComponent<OpenedDoor>())
             {
                 Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
-                if (Input.GetKeyDown(KeyCode.E))
+                if (GameInput.Key.GetKeyDown("Interact"))
                 {
                     hit.transform.GetComponent<OpenedDoor>().Open();
                 }
@@ -117,7 +117,7 @@ namespace Player
             //Inventory objects
             if (hit.transform != null && hit.transform.GetComponent<ItamLay>())
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (GameInput.Key.GetKeyDown("Interact"))
                 {
                     var itemData = hit.transform.GetComponent<ItamLay>().ItemData;
 
@@ -132,7 +132,7 @@ namespace Player
             if (hit.transform != null && hit.transform.GetComponent<Notes>())
             {
                 Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
-                if (Input.GetKeyDown(KeyCode.E))
+                if (GameInput.Key.GetKeyDown("Interact"))
                 {
                     if (note.isNote)
                     {
@@ -150,7 +150,7 @@ namespace Player
             if (hit.transform != null && hit.transform.GetComponent<Polki>())
             {
                 Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
-                if (Input.GetKeyDown(KeyCode.E))
+                if (GameInput.Key.GetKeyDown("Interact"))
                 {
                     hit.transform.GetComponent<Polki>().Open();
                 }
@@ -160,7 +160,7 @@ namespace Player
             if (hit.transform != null && hit.transform.GetComponent<Stairs>())
             {
                 Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
-                if (Input.GetKeyDown(KeyCode.E))
+                if (GameInput.Key.GetKeyDown("Interact"))
                 {
                     _stairs.Invoke();
                 }
@@ -210,7 +210,7 @@ namespace Player
             if (_inventoryPanel.CurrentItem && _inventoryPanel.CurrentItem == _flashlightData)
             {
                 _flashPrompt.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.F))
+                if (GameInput.Key.GetKeyDown("Flash"))
                 {
                     isFlash = !isFlash;
 

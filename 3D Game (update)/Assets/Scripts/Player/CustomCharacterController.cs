@@ -39,6 +39,7 @@ public class CustomCharacterController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         // и делаем его невидимым
         Cursor.visible = false;
+        GameInput.Key.LoadSettings();
     }
     
     void Seat()
@@ -86,10 +87,10 @@ public class CustomCharacterController : MonoBehaviour
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, mainCamera.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 
         // Зажаты ли кнопки W и Shift?
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && staminaValue > 0)
+        if (Input.GetKey(KeyCode.W) && GameInput.Key.GetKey("Run") && staminaValue > 0)
         {
             // Зажаты ли еще кнопки A S D?
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftControl))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || GameInput.Key.GetKey("Crouch"))
             {
                 // Если да, то мы идем пешком
                 Walk();
@@ -111,7 +112,7 @@ public class CustomCharacterController : MonoBehaviour
             currentSpeed = 1.3f;
         }
 
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (GameInput.Key.GetKey("Crouch"))
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
