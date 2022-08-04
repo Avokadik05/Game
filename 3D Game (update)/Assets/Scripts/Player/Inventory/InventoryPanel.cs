@@ -65,10 +65,10 @@ namespace Other.Inventory
             if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha6))
                 ChouseCell(5);
 
-            if (UnityEngine.Input.GetKeyDown(KeyCode.Q))
+            if (GameInput.Key.GetKey("Drop"))
                 Drop();
 
-            if (UnityEngine.Input.GetKeyDown(KeyCode.R))
+            if (GameInput.Key.GetKey("Use"))
                 Remove();
         }
 

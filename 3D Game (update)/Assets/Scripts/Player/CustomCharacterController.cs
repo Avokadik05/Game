@@ -21,6 +21,10 @@ public class CustomCharacterController : MonoBehaviour
     RaycastHit _hit;
     public LayerMask _floormask;
     public LayerMask _forestmask;
+    [SerializeField]
+    private Text debug;
+    [SerializeField]
+    private CameraMovement fc;
 
     [Header("Параметры персонажа")]
     public float jumpForce = 3.5f;
@@ -29,6 +33,8 @@ public class CustomCharacterController : MonoBehaviour
     public float stamina_speed = 2f; 
     public float currentSpeed;
     private float animationInterpolation = 1f;
+    public float distToGround = 1f;
+    float _slopeAngle;
     public CapsuleCollider playerCollider;
     public AudioClip[] _floor;
     public AudioClip[] _forest;
@@ -140,6 +146,22 @@ public class CustomCharacterController : MonoBehaviour
             anim.SetTrigger("Jump");
             Jump();    
         }*/
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+           fc._camera.SetActive(false);
+            fc._controller.enabled = false;
+            fc.enabled = true;
+            fc.useFreeCam = true;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            fc._camera.SetActive(true);
+            fc._controller.enabled = true;
+            fc.useFreeCam = false;
+            fc.enabled = false;
+        }
     }
 
     void FixedUpdate()
@@ -187,7 +209,36 @@ public class CustomCharacterController : MonoBehaviour
 
     void Footstep()
     {
-        if(Physics.Raycast (transform.position, -transform.up, out _hit, _floormask))
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, distToGround + 0.1f, _forestmask))
+        {
+            distToGround = 5.5f;
+            _slopeAngle = (Vector3.Angle(hit.normal, transform.forward) - 90);
+            debug.text = "Grounded on " + hit.transform.name;
+            debug.text += "\nSlope Angle: " + _slopeAngle.ToString("N0") + "°";
+            int randInd = Random.Range(0, _floor.Length);
+
+            _playerAudio.PlayOneShot(_floor[randInd]);
+        }
+
+
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, distToGround + 0.1f, _floormask))
+        {
+            distToGround = 0.5f;
+            _slopeAngle = (Vector3.Angle(hit.normal, transform.forward) - 90);
+            debug.text = "Grounded on " + hit.transform.name;
+            debug.text += "\nSlope Angle: " + _slopeAngle.ToString("N0") + "°";
+            int randInd = Random.Range(0, _floor.Length);
+
+            _playerAudio.PlayOneShot(_floor[randInd]);
+        }
+
+
+
+
+
+
+        /*if (Physics.Raycast (transform.position, -transform.up, out _hit, _floormask))
         {
             int randInd = Random.Range(0, _floor.Length);
 
@@ -198,7 +249,7 @@ public class CustomCharacterController : MonoBehaviour
             int randInd = Random.Range(0, _forest.Length);
 
             _playerAudio.PlayOneShot(_forest[randInd]);
-        }
+        }*/
     }
 
     public void OffEffects()

@@ -1,4 +1,6 @@
-Flash=120
+Flash=102
 Interact=101
 Crouch=306
 Run=304
+Drop=113
+Use=114
