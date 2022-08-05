@@ -23,7 +23,7 @@ public class PhotoMaker : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Tab))
         {
-            ShowFolder();
+            /*ShowFolder();*/
         }
     }
 
@@ -47,8 +47,8 @@ public class PhotoMaker : MonoBehaviour
         File.WriteAllBytes(_path + $"test{_attempt}.jpg", _photo.EncodeToJPG(100));
     }
 
-    private void ShowFolder()
+    /*private void ShowFolder()
     {
         UnityEditor.EditorUtility.RevealInFinder(_path);
-    }
+    }*/
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 // необходимо чтобы название скрипта и название класса совпадали
 public class CustomCharacterController : MonoBehaviour
@@ -22,7 +23,7 @@ public class CustomCharacterController : MonoBehaviour
     public LayerMask _floormask;
     public LayerMask _forestmask;
     [SerializeField]
-    private Text debug;
+    private TextMeshProUGUI debug;
     [SerializeField]
     private CameraMovement fc;
     [SerializeField]
@@ -216,8 +217,8 @@ public class CustomCharacterController : MonoBehaviour
         {
             distToGround = 5.5f;
              
-            int randInd = Random.Range(0, _floor.Length);
-            _playerAudio.PlayOneShot(_floor[randInd]);
+            int randInd = Random.Range(0, _forest.Length);
+            _playerAudio.PlayOneShot(_forest[randInd]);
 
             if (debugMod)
             {
@@ -231,7 +232,7 @@ public class CustomCharacterController : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hit, distToGround + 0.1f, _floormask))
         {
             distToGround = 0.5f;
-            
+
             int randInd = Random.Range(0, _floor.Length);
             _playerAudio.PlayOneShot(_floor[randInd]);
 
@@ -242,6 +243,7 @@ public class CustomCharacterController : MonoBehaviour
                 debug.text += "\nSlope Angle: " + _slopeAngle.ToString("N0") + "°";
             }
         }
+
 
 
 
