@@ -25,6 +25,8 @@ public class CustomCharacterController : MonoBehaviour
     private Text debug;
     [SerializeField]
     private CameraMovement fc;
+    [SerializeField]
+    private bool debugMod;
 
     [Header("Параметры персонажа")]
     public float jumpForce = 3.5f;
@@ -213,24 +215,32 @@ public class CustomCharacterController : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hit, distToGround + 0.1f, _forestmask))
         {
             distToGround = 5.5f;
-            _slopeAngle = (Vector3.Angle(hit.normal, transform.forward) - 90);
-            debug.text = "Grounded on " + hit.transform.name;
-            debug.text += "\nSlope Angle: " + _slopeAngle.ToString("N0") + "°";
+             
             int randInd = Random.Range(0, _floor.Length);
-
             _playerAudio.PlayOneShot(_floor[randInd]);
+
+            if (debugMod)
+            {
+                _slopeAngle = (Vector3.Angle(hit.normal, transform.forward) - 90);
+                debug.text = "Grounded on " + hit.transform.name;
+                debug.text += "\nSlope Angle: " + _slopeAngle.ToString("N0") + "°";
+            }
         }
 
 
         if (Physics.Raycast(transform.position, Vector3.down, out hit, distToGround + 0.1f, _floormask))
         {
             distToGround = 0.5f;
-            _slopeAngle = (Vector3.Angle(hit.normal, transform.forward) - 90);
-            debug.text = "Grounded on " + hit.transform.name;
-            debug.text += "\nSlope Angle: " + _slopeAngle.ToString("N0") + "°";
+            
             int randInd = Random.Range(0, _floor.Length);
-
             _playerAudio.PlayOneShot(_floor[randInd]);
+
+            if (debugMod)
+            {
+                _slopeAngle = (Vector3.Angle(hit.normal, transform.forward) - 90);
+                debug.text = "Grounded on " + hit.transform.name;
+                debug.text += "\nSlope Angle: " + _slopeAngle.ToString("N0") + "°";
+            }
         }
 
 
