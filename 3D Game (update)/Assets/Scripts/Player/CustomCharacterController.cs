@@ -150,7 +150,7 @@ public class CustomCharacterController : MonoBehaviour
             Jump();    
         }*/
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        /*if (Input.GetKeyDown(KeyCode.Z))
         {
            fc._camera.SetActive(false);
             fc._controller.enabled = false;
@@ -164,7 +164,7 @@ public class CustomCharacterController : MonoBehaviour
             fc._controller.enabled = true;
             fc.useFreeCam = false;
             fc.enabled = false;
-        }
+        }*/
     }
 
     void FixedUpdate()
@@ -215,7 +215,6 @@ public class CustomCharacterController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, distToGround + 0.1f, _forestmask))
         {
-            distToGround = 5.5f;
              
             int randInd = Random.Range(0, _forest.Length);
             _playerAudio.PlayOneShot(_forest[randInd]);
@@ -231,7 +230,6 @@ public class CustomCharacterController : MonoBehaviour
 
         if (Physics.Raycast(transform.position, Vector3.down, out hit, distToGround + 0.1f, _floormask))
         {
-            distToGround = 0.5f;
 
             int randInd = Random.Range(0, _floor.Length);
             _playerAudio.PlayOneShot(_floor[randInd]);

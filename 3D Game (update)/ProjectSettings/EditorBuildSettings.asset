@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Labyrinth 1.unity
     guid: 6c4ef3d89cf398e41a78417734625cd3
+  - enabled: 1
+    path: Assets/Scenes/TestLevel.unity
+    guid: 6c3342f015f9bec49aab27f56ade6f25
+  - enabled: 1
+    path: Assets/Scenes/TestLevel 1.unity
+    guid: c314e007819cdab439658e08d274e024
   m_configObjects: {}

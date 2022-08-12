@@ -1,6 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PausedMenu : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PausedMenu : MonoBehaviour
     private GameObject staminaSlider;
     [SerializeField]
     private CinemachineBrain cameraTargget;
+    [SerializeField]
+    private SaveData sd;
     
     [Header("Other")]
     public static bool GameIsPause = false;
