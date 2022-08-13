@@ -14,6 +14,8 @@ public class SaveSerial : MonoBehaviour
     public Transform player;
     public GameObject testObj;
     public string levelTS;
+    public List<GameObject> objs;
+    public bool[] cuts;
 
     DateTime _date;
 
@@ -22,6 +24,7 @@ public class SaveSerial : MonoBehaviour
     private void Start()
     {
         LoadGame();
+        cuts = new bool[5];
     }
 
     private void Update()
@@ -44,6 +47,12 @@ public class SaveSerial : MonoBehaviour
         /*test.text = "This time " + _date;*/
     }
 
+
+    public void Options()
+    {
+        cuts[0] = true;
+    }
+    
     public void SaveGame()
     {
         BinaryFormatter bf = new BinaryFormatter();
@@ -73,6 +82,8 @@ public class SaveSerial : MonoBehaviour
         else
             data.activeObj = false;
 
+        data.activeObjs[0] = cuts[0];
+
         levelTS = SceneManager.GetActiveScene().name;
         data.levelName = levelTS;
 
@@ -85,10 +96,6 @@ public class SaveSerial : MonoBehaviour
         _date = DateTime.Now;
         
         Debug.Log("Game data saved! Date saved: " + _date);
-
-
-
-
     }
 
     void LoadGame()
@@ -122,6 +129,14 @@ public class SaveSerial : MonoBehaviour
 
             levelTS = data.levelName;
 
+            cuts[0] = data.activeObjs[0];
+
+            if (cuts[0] == true)
+            {
+                print("Yess");
+                objs[0].SetActive(false);
+            }
+
             if (SceneManager.GetActiveScene().name == levelTS)
                 print("You are on the current scene");
             else
@@ -135,7 +150,7 @@ public class SaveSerial : MonoBehaviour
             Debug.LogError("There is no save data!");
     }
 
-    void ResetData()
+    public void ResetData()
     {
         if (File.Exists(Application.persistentDataPath
           + "/MySaveData.dat"))
@@ -166,4 +181,5 @@ class SaveData
     public bool activeObj;
     public string levelName;
     public string savedDate;
+    public bool[] activeObjs = new bool[5];
 }
