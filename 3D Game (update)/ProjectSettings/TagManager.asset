@@ -8,6 +8,8 @@ TagManager:
   - Key
   - Forest
   - Floor
+  - Test
+  - Glav_Door
   layers:
   - Default
   - TransparentFX

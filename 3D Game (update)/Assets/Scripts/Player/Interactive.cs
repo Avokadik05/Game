@@ -44,6 +44,8 @@ namespace Player
         private Notes note;
         public UnityEvent noteEvent;
         public UnityEvent _stairs;
+        public UnityEvent doorEvent;
+        public GameObject DoorObj;
 
         private void Start()
         {
@@ -110,7 +112,15 @@ namespace Player
                 Debug.DrawRay(ray.origin, ray.direction * maxDistanceRay, Color.green);
                 if (GameInput.Key.GetKeyDown("Interact"))
                 {
-                    hit.transform.GetComponent<OpenedDoor>().Open();
+                    if(hit.transform.tag == "Glav_Door")
+                    {
+                        doorEvent.Invoke();
+                        //print("Glav_Door it's: " + hit.transform.gameObject);
+                        hit.transform.GetComponent<OpenedDoor>().Open();
+                        Destroy(DoorObj, 6f);
+                    }
+                    else
+                        hit.transform.GetComponent<OpenedDoor>().Open();
                 }
             }
 
