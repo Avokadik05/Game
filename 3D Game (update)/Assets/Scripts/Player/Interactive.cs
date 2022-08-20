@@ -37,6 +37,12 @@ namespace Player
         private GameObject _dropPrompt;
         public GameObject _errorPrompt;
         [SerializeField]
+        private Transform _container;
+        [SerializeField]
+        private GameObject _flash;
+        [SerializeField]
+        private PlayAnimation _rigAnim;
+        [SerializeField]
         private GameObject interactiveCross;
         [SerializeField]
         private CutScene cut;
@@ -220,6 +226,9 @@ namespace Player
             if (_inventoryPanel.CurrentItem && _inventoryPanel.CurrentItem == _flashlightData)
             {
                 _flashPrompt.SetActive(true);
+                _flash.SetActive(true);
+                _rigAnim.attack_ID = 1;
+
                 if (GameInput.Key.GetKeyDown("Flash"))
                 {
                     isFlash = !isFlash;
@@ -236,6 +245,8 @@ namespace Player
             }
             else if(_inventoryPanel.CurrentItem || _inventoryPanel.CurrentItem != _flashlightData)
             {
+                _rigAnim.attack_ID = 2;
+                _flash.SetActive(false);
                 _flashPrompt.SetActive(false);
                 _flashlight.enabled = false;
                 isFlash = false;

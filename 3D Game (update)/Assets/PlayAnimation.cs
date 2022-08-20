@@ -6,12 +6,12 @@ public class PlayAnimation : MonoBehaviour
     public Rig mob_rig;
     public float _weightSpeed = 3;
 
-    int attack_ID;
+    public int attack_ID;
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)) attack_ID = 1;
-        else if(Input.GetKeyDown(KeyCode.T)) attack_ID = 2;
+        /*if (Input.GetKeyDown(KeyCode.R)) attack_ID = 1;
+        else if(Input.GetKeyDown(KeyCode.T)) attack_ID = 2;*/
 
         if(attack_ID == 1)
         {
